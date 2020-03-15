@@ -1,0 +1,43 @@
+parameters:
+
+    #rock paper scissors
+
+    #game elements
+    app.game.rock_paper_scissors.element.rock: 'rock'
+    app.game.rock_paper_scissors.element.paper: 'paper'
+    app.game.rock_paper_scissors.element.scissors: 'scissors'
+
+    app.game.rock_paper_scissors.all_elements:
+        - '%app.game.rock_paper_scissors.element.rock%'
+        - '%app.game.rock_paper_scissors.element.paper%'
+        - '%app.game.rock_paper_scissors.element.scissors%'
+
+    #game element beats
+    app.game.rock_paper_scissors.beats:
+        #'%app.game.rock_paper_scissors.element.rock%':
+        rock:
+            - '%app.game.rock_paper_scissors.element.scissors%'
+        paper:
+            - '%app.game.rock_paper_scissors.element.rock%'
+        scissors:
+            - '%app.game.rock_paper_scissors.element.paper%'
+
+    #strategies
+    app.game.rock_paper_scissors.strategy.single_element: 'single_element'
+    app.game.rock_paper_scissors.strategy.random: 'random'
+
+    #game elements of strategies
+    app.game.rock_paper_scissors.strategy_elements:
+        single_element:
+            - '%app.game.rock_paper_scissors.element.paper%'
+        random:
+            - '%app.game.rock_paper_scissors.element.rock%'
+            - '%app.game.rock_paper_scissors.element.paper%'
+            - '%app.game.rock_paper_scissors.element.scissors%'
+
+    #players
+    app.game.rock_paper_scissors.players:
+        - name: 'Player A'
+          strategy: '%app.game.rock_paper_scissors.strategy.single_element%'
+        - name: 'Player B'
+          strategy: '%app.game.rock_paper_scissors.strategy.random%'

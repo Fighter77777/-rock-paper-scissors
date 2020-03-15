@@ -25,7 +25,6 @@ class PlayersCollection implements Iterator
      */
     public function __construct(array $players)
     {
-        //todo: validate
         $this->players = $players;
         $this->position = 0;
     }
@@ -44,7 +43,7 @@ class PlayersCollection implements Iterator
     }
 
     /**
-     * @return int|mixed
+     * @return int
      */
     public function key()
     {
@@ -61,9 +60,12 @@ class PlayersCollection implements Iterator
      */
     public function valid()
     {
-        return isset($this->players[$this->position]) && $this->players[$this->position] instanceof Player;
+        return isset($this->players[$this->position]);
     }
 
+    /**
+     * @return int
+     */
     public function getQuantityPlayers(): int
     {
         return count($this->players);

@@ -5,6 +5,7 @@ namespace App\Utils\RockPaperScissors;
 use App\Models\RockPaperScissors\GameSeries;
 use App\Models\RockPaperScissors\PlayersCollection;
 use App\Utils\RockPaperScissors\GameResults\PlayRoundInterface;
+use \Iterator;
 
 /**
  * Class GameLauncher
@@ -37,7 +38,13 @@ class GameLauncher
         return new GameSeries($rounds);
     }
 
-    private function processRounds(PlayersCollection $playersCollection, int $times)
+    /**
+     * @param PlayersCollection $playersCollection
+     * @param int               $times
+     *
+     * @return Iterator
+     */
+    private function processRounds(PlayersCollection $playersCollection, int $times): Iterator
     {
         for ($i = 0; $i < $times; $i++) {
             yield $this->playRoundService->play($playersCollection);

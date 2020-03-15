@@ -1,5 +1,4 @@
 parameters:
-
     #rock paper scissors
 
     #game elements
@@ -14,12 +13,11 @@ parameters:
 
     #game element beats
     app.game.rock_paper_scissors.beats:
-        #'%app.game.rock_paper_scissors.element.rock%':
-        rock:
+        '%app.game.rock_paper_scissors.element.rock%':
             - '%app.game.rock_paper_scissors.element.scissors%'
-        paper:
+        '%app.game.rock_paper_scissors.element.paper%':
             - '%app.game.rock_paper_scissors.element.rock%'
-        scissors:
+        '%app.game.rock_paper_scissors.element.scissors%':
             - '%app.game.rock_paper_scissors.element.paper%'
 
     #strategies
@@ -28,9 +26,9 @@ parameters:
 
     #game elements of strategies
     app.game.rock_paper_scissors.strategy_elements:
-        single_element:
+        '%app.game.rock_paper_scissors.strategy.single_element%':
             - '%app.game.rock_paper_scissors.element.paper%'
-        random:
+        '%app.game.rock_paper_scissors.strategy.random%':
             - '%app.game.rock_paper_scissors.element.rock%'
             - '%app.game.rock_paper_scissors.element.paper%'
             - '%app.game.rock_paper_scissors.element.scissors%'

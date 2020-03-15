@@ -28,8 +28,6 @@ class Round
         return $this->members;
     }
 
-
-
     /**
      * @param array $members
      *
@@ -38,7 +36,7 @@ class Round
     public static function createRound(array $members) {
         foreach ($members as $member) {
             if (!$member instanceof RoundMember) {
-                throw new \RuntimeException('$member not instanceof RoundMember'); //todo custom Exception
+                throw new \InvalidArgumentException('All members of a round should be instance of RoundMember');
             }
         }
 

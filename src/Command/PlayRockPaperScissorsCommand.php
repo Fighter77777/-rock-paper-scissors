@@ -79,7 +79,7 @@ class PlayRockPaperScissorsCommand extends Command
         $this
             ->setName('app:play:rock-paper-scissors')
             ->setAliases(['play'])
-            ->setDescription('To play rock, paper, scissors run the command bin/console play')
+            ->setDescription('To play rock, paper, scissors run the command bin/console play [-r[0-9]+]')
             ->addOption(
                 self::OPTION_ROUND_TIMES,
                 'r',

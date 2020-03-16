@@ -49,13 +49,5 @@ class GameLauncher
         for ($i = 0; $i < $times; $i++) {
             yield $this->playRoundService->play($playersCollection);
         }
-
-        /*$rounds = [];
-
-        for ($i = 0; $i < $times; $i++) {
-            $rounds[] = $this->playRoundService->play($playersCollection);
-        }
-
-        return $rounds;*/
     }
 }
